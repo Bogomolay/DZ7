@@ -1,0 +1,29 @@
+Console.WriteLine("Введите колличество строк");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите колличество столбцов");
+int n = Convert.ToInt32(Console.ReadLine());
+int[,] matrix = new int[m, n];
+ 
+for (int i = 0; i < matrix.GetLength(0); i++) 
+{
+    for (int j = 0; j < matrix.GetLength(1); j++)
+        matrix [i, j] = Convert.ToInt32(new Random().Next(-10,11));  
+}
+ 
+for (int i = 0; i < matrix.GetLength(0); i++) 
+{
+    for (int j = 0; j < matrix.GetLength(1); j++)
+        Console.Write(matrix[i,j] + "\t  ");
+        Console.WriteLine();
+}
+ Console.WriteLine("Введите строчку");
+ int a = Convert.ToInt32(Console.ReadLine());
+ Console.WriteLine("Введите столбец");
+ int b = Convert.ToInt32(Console.ReadLine());
+ if (a>m && b>n)
+ Console.WriteLine("Tакого числа нет");
+ else
+ {
+ object c = matrix[a,b];
+ Console.WriteLine(c);
+ }
